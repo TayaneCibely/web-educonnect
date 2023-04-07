@@ -12,7 +12,7 @@ class DiscenteService {
     return http.delete(`discente/${id}`);
   }
   async update(id, data) {
-    return http.put(`discente/${id}`, data);
+    return http.patch(`discente/${id}`, data);
   }
   async load(id) {
     return http.get(`discente/${id}`);
