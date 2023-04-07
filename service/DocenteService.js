@@ -12,7 +12,7 @@ class DocenteService {
     return http.delete(`docente/${id}`);
   }
   async update(id, data) {
-    return http.put(`docente/${id}`, data);
+    return http.patch(`docente/${id}`, data);
   }
   async load(id) {
     return http.get(`docente/${id}`);

@@ -96,6 +96,11 @@ export default {
           icon: 'mdi-account',
           title: 'Discente',
           to: '/discente'
+        },  
+        {
+          icon: 'mdi-account',
+          title: 'Docentes',
+          to: '/docente'
         }
       ],
       miniVariant: false,
