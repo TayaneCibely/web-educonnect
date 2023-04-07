@@ -76,6 +76,21 @@ export default {
           icon: 'mdi-apps',
           title: 'Welcome',
           to: '/'
+        },  
+        {
+          icon: 'mdi-account',
+          title: 'Docente',
+          to: '/docente-dash'
+        },
+        {
+          icon: 'mdi-account',
+          title: 'Discente',
+          to: '/discente-dash'
+        }, 
+        {
+          icon: 'mdi-account',
+          title: 'Disciplina',
+          to: '/disciplina'
         }
       ],
       miniVariant: false,

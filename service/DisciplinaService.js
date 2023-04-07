@@ -12,7 +12,7 @@ class DisciplinaService {
     return http.delete(`disciplina/${id}`);
   }
   async update(id, data) {
-    return http.put(`disciplina/${id}`, data);
+    return http.patch('disciplina/' + id, data);
   }
   async load(id) {
     return http.get(`disciplina/${id}`);

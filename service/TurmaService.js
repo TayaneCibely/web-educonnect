@@ -2,8 +2,8 @@ import http from "@/common/http";
 
 class TurmaService {
 
-  async create(data, idDocente, idTurma) {
-    return http.post(`docente/${idDocente}/turma/${idTurma}`, data);
+  async create(data, idDocente, idDisciplina) {
+    return http.post(`docente/${idDocente}/turma/${idDisciplina}`, data);
   }
   async list() {
     return http.get("turmas");
