@@ -1,37 +1,27 @@
 <template>
   <v-container class="bg-surface-variant">
+    <v-select label="Select" :items="listaDocentes" item-text="nome"  ></v-select>
     <v-row no-gutters>
       <v-col>
         <h1 class="mx-auto">Docente</h1>
-        <v-card
-    class="mx-auto"
-    max-width="344"
-    outlined
-  >
-    <v-list-item three-line>
-      <v-list-item-content>
-        <v-list-item-title class="text-h5 mb-1">
-          Nome do Docente
-        </v-list-item-title>
-        <v-list-item-subtitle>Email do Docente</v-list-item-subtitle>
-      </v-list-item-content>
+        <v-card class="mx-auto" max-width="344" outlined>
+          <v-list-item three-line>
+            <v-list-item-content>
+              <v-list-item-title class="text-h5 mb-1">
+                {{ docente.nome }}
+              </v-list-item-title>
+              <v-list-item-subtitle>{{ docente.email }}</v-list-item-subtitle>
+            </v-list-item-content>
 
-      <v-list-item-avatar
-        tile
-        size="80"
-        color="grey"
-      ></v-list-item-avatar>
-    </v-list-item>
+            <v-list-item-avatar tile size="80" color="grey"></v-list-item-avatar>
+          </v-list-item>
 
-    <v-card-actions>
-      <v-btn
-        rounded
-        text
-      >
-        Minhas Disciplinas
-      </v-btn>
-    </v-card-actions>
-  </v-card>
+          <v-card-actions>
+            <NuxtLink :to="`/turma/list`" rounded>
+              Minhas Disciplinas
+            </NuxtLink>
+          </v-card-actions>
+        </v-card>
       </v-col>
       <v-col>
         <h1>Disciplinas Disponiveis</h1>
@@ -46,18 +36,18 @@
             </thead>
             <tbody>
               <tr v-for="d in listaDisciplinas" :key="d.id">
-                  <td>
-                      {{ d.disciplina }}  
-                      
-                  </td>
-                  <td>
-                      <v-btn icon @click="ofertar(d, id)">
-                          <v-icon>mdi-trash-can-outline</v-icon>
-                      </v-btn>
-                  </td>
+                <td>
+                  {{ d.disciplina }}
+                </td>
+                <td>
+                  <NuxtLink :to="`/turma/${d.id}`">
+                      <v-icon >mdi-square-edit-outline</v-icon>
+                  </NuxtLink>
+                  
+                </td>
               </tr>
             </tbody>
-        </v-simple-table>
+          </v-simple-table>
         </v-card>
       </v-col>
     </v-row>
@@ -65,38 +55,48 @@
 </template>
 
 <script setup>
-  import { reactive, ref } from 'vue';
-  import { onMounted } from 'vue';
-  import TurmaService from '~/service/TurmaService';
-  import DisciplinaService from '@/service/DisciplinaService';
+import { ref } from 'vue';
+import { onMounted } from 'vue';
+import DisciplinaService from '@/service/DisciplinaService';
+import DocenteService from '@/service/DocenteService';
 
-  const listaDisciplinas = ref([])
+const listaDisciplinas = ref([])
+const listaDocentes = ref([])
+const docente = ref([])
 
-  function ofertar(data, idDoc, idDis) {
-    
-  }
-  
-  function loadDisciplinas() {
-    DisciplinaService.list().then (
-      response => {
-        listaDisciplinas.value = response.data;
-      }
-    )
-  }
+//function ofertar() {
+  //const data = new Date(Date.now()).toLocaleString('pt-BR').split(',')[0]
+  //console.log(data);
+//}
 
-  const data = new reactive(
-    {
-      show: false
+function loadDisciplinas() {
+  DisciplinaService.list().then(
+    response => {
+      listaDisciplinas.value = response.data;
     }
   )
-
-  const texto = new reactive(
-    {
-      valor: "<i>Valor</i>"
+}
+//caso tivesse que escolher -> implementar depois
+function loadDocentes() {
+  DocenteService.list().then(
+    response => {
+      listaDocentes.value = response.data;
     }
-  );
-
-  onMounted(
-    () => {loadDisciplinas();} 
   )
+}
+
+function load() {
+  DocenteService.load(1).then(response => {
+    docente.value = response.data;
+  })
+}
+
+onMounted(
+  () => {
+    load();
+    loadDocentes();
+    loadDisciplinas();
+
+  }
+)
 </script>

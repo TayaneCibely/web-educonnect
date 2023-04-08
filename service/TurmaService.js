@@ -11,7 +11,7 @@ class TurmaService {
   async delete(idDocente, idTurma) {
     return http.delete(`docente/${idDocente}/turma/${idTurma}`);
   }
-  async listTurmasDocente() {
+  async listTurmasDocente(idDocente) {
     return http.get(`docente/${idDocente}/turmas`);
   }
   //falta implementar no backend

@@ -1,0 +1,127 @@
+[
+  {
+    "name": "discente",
+    "path": "/discente",
+    "component": "/home/lucas/projects/web-educonnect/pages/discente.vue",
+    "chunkName": "pages/discente",
+    "children": [
+      {
+        "name": "discente-create",
+        "path": "create",
+        "component": "/home/lucas/projects/web-educonnect/pages/discente/create.vue",
+        "chunkName": "pages/discente/create",
+        "_name": "_247e86fc"
+      },
+      {
+        "name": "discente-list",
+        "path": "list",
+        "component": "/home/lucas/projects/web-educonnect/pages/discente/list.vue",
+        "chunkName": "pages/discente/list",
+        "_name": "_4d8be2b8"
+      },
+      {
+        "name": "discente-edit-discente",
+        "path": "edit/:discente?",
+        "component": "/home/lucas/projects/web-educonnect/pages/discente/edit/_discente.vue",
+        "chunkName": "pages/discente/edit/_discente",
+        "_name": "_14b1ee8f"
+      }
+    ],
+    "_name": "_714c440e"
+  },
+  {
+    "name": "discente-dash",
+    "path": "/discente-dash",
+    "component": "/home/lucas/projects/web-educonnect/pages/discente-dash.vue",
+    "chunkName": "pages/discente-dash",
+    "_name": "_6c6654d4"
+  },
+  {
+    "name": "disciplina",
+    "path": "/disciplina",
+    "component": "/home/lucas/projects/web-educonnect/pages/disciplina.vue",
+    "chunkName": "pages/disciplina",
+    "children": [
+      {
+        "name": "disciplina-create",
+        "path": "create",
+        "component": "/home/lucas/projects/web-educonnect/pages/disciplina/create.vue",
+        "chunkName": "pages/disciplina/create",
+        "_name": "_667cd565"
+      },
+      {
+        "name": "disciplina-list",
+        "path": "list",
+        "component": "/home/lucas/projects/web-educonnect/pages/disciplina/list.vue",
+        "chunkName": "pages/disciplina/list",
+        "_name": "_2edd0447"
+      },
+      {
+        "name": "disciplina-edit-disciplina",
+        "path": "edit/:disciplina?",
+        "component": "/home/lucas/projects/web-educonnect/pages/disciplina/edit/_disciplina.vue",
+        "chunkName": "pages/disciplina/edit/_disciplina",
+        "_name": "_4134eaa2"
+      }
+    ],
+    "_name": "_5286ae76"
+  },
+  {
+    "name": "docente",
+    "path": "/docente",
+    "component": "/home/lucas/projects/web-educonnect/pages/docente.vue",
+    "chunkName": "pages/docente",
+    "children": [
+      {
+        "name": "docente-create",
+        "path": "create",
+        "component": "/home/lucas/projects/web-educonnect/pages/docente/create.vue",
+        "chunkName": "pages/docente/create",
+        "_name": "_3c8ad723"
+      },
+      {
+        "name": "docente-list",
+        "path": "list",
+        "component": "/home/lucas/projects/web-educonnect/pages/docente/list.vue",
+        "chunkName": "pages/docente/list",
+        "_name": "_275c5d85"
+      },
+      {
+        "name": "docente-edit-docente",
+        "path": "edit/:docente?",
+        "component": "/home/lucas/projects/web-educonnect/pages/docente/edit/_docente.vue",
+        "chunkName": "pages/docente/edit/_docente",
+        "_name": "_d13b2d3e"
+      }
+    ],
+    "_name": "_20880678"
+  },
+  {
+    "name": "docente-dash",
+    "path": "/docente-dash",
+    "component": "/home/lucas/projects/web-educonnect/pages/docente-dash.vue",
+    "chunkName": "pages/docente-dash",
+    "_name": "_17ef2477"
+  },
+  {
+    "name": "turma-list",
+    "path": "/turma/list",
+    "component": "/home/lucas/projects/web-educonnect/pages/turma/list.vue",
+    "chunkName": "pages/turma/list",
+    "_name": "_29ad2e12"
+  },
+  {
+    "name": "turma-disciplina",
+    "path": "/turma/:disciplina?",
+    "component": "/home/lucas/projects/web-educonnect/pages/turma/_disciplina.vue",
+    "chunkName": "pages/turma/_disciplina",
+    "_name": "_4c504cc7"
+  },
+  {
+    "name": "index",
+    "path": "/",
+    "component": "/home/lucas/projects/web-educonnect/pages/index.vue",
+    "chunkName": "pages/index",
+    "_name": "_c5852690"
+  }
+]
