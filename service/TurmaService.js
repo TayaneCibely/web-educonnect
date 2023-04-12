@@ -18,8 +18,8 @@ class TurmaService {
   async update(id, data) {
     return http.put(`docente/${id}`, data);
   }
-  async load(idDocente, idTurma) {
-    return http.get(`docente/${idDocente}/turma/${idTurma}`);
+  async load(idTurma) {
+    return http.get(`turma/${idTurma}`);
   }
 
 }

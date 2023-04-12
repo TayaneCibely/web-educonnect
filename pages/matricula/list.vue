@@ -16,21 +16,21 @@
       </tr>
     </thead>
     <tbody>
-      <tr v-for="t in turmas" :key="t.id">
+      <tr v-for="m in matriculas" :key="m.id">
           <td>
-            {{ t.disciplina.disciplina }}  
+            {{ m.turma.disciplina.disciplina }}  
               
           </td>
           <td>
-            {{ t.periodo }}  
+            {{ m.turma.periodo }}  
               
           </td>
           <td>
-            {{ t.horario.horario }}  
+            {{ m.turma.horario.horario }}  
               
           </td>
           <td>
-            <v-btn icon @click="deletar(t.id)">
+            <v-btn icon @click="deletar(m.id)">
                   <v-icon>mdi-trash-can-outline</v-icon>
               </v-btn>
           </td>
@@ -39,23 +39,26 @@
 </v-simple-table>
 </template>
 <script setup>
-import { reactive, ref } from 'vue'
+import { ref } from 'vue'
 import { onMounted } from 'vue';
+import { useRoute } from 'vue2-helpers/vue-router';
 
-import TurmaService from '@/service/TurmaService';
+import MatriculaService from '@/service/MatriculaService';
 
-const turmas = ref([])
+const route = useRoute()
+
+const matriculas = ref([])
 
 function load() {
-  TurmaService.listTurmasDocente(1).then(
+  MatriculaService.listMatriculasDiscente(2).then(
     response => {
-      turmas.value = response.data;
+      matriculas.value = response.data;
     }
   )
 }
 
 function deletar(id){
-  TurmaService.delete(1, id).then (
+  MatriculaService.delete(2, id).then (
           response => {
             load();
           }

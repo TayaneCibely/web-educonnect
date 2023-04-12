@@ -18,7 +18,9 @@ const _3c8ad723 = () => interopDefault(import('../pages/docente/create.vue' /* w
 const _275c5d85 = () => interopDefault(import('../pages/docente/list.vue' /* webpackChunkName: "pages/docente/list" */))
 const _d13b2d3e = () => interopDefault(import('../pages/docente/edit/_docente.vue' /* webpackChunkName: "pages/docente/edit/_docente" */))
 const _17ef2477 = () => interopDefault(import('../pages/docente-dash.vue' /* webpackChunkName: "pages/docente-dash" */))
+const _7879f9ce = () => interopDefault(import('../pages/matricula/list.vue' /* webpackChunkName: "pages/matricula/list" */))
 const _29ad2e12 = () => interopDefault(import('../pages/turma/list.vue' /* webpackChunkName: "pages/turma/list" */))
+const _b31817be = () => interopDefault(import('../pages/matricula/_turma.vue' /* webpackChunkName: "pages/matricula/_turma" */))
 const _4c504cc7 = () => interopDefault(import('../pages/turma/_disciplina.vue' /* webpackChunkName: "pages/turma/_disciplina" */))
 const _c5852690 = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
 
@@ -93,9 +95,17 @@ export const routerOptions = {
     component: _17ef2477,
     name: "docente-dash"
   }, {
+    path: "/matricula/list",
+    component: _7879f9ce,
+    name: "matricula-list"
+  }, {
     path: "/turma/list",
     component: _29ad2e12,
     name: "turma-list"
+  }, {
+    path: "/matricula/:turma?",
+    component: _b31817be,
+    name: "matricula-turma"
   }, {
     path: "/turma/:disciplina?",
     component: _4c504cc7,

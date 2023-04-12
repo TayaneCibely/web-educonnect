@@ -104,11 +104,25 @@
     "_name": "_17ef2477"
   },
   {
+    "name": "matricula-list",
+    "path": "/matricula/list",
+    "component": "/home/lucas/projects/web-educonnect/pages/matricula/list.vue",
+    "chunkName": "pages/matricula/list",
+    "_name": "_7879f9ce"
+  },
+  {
     "name": "turma-list",
     "path": "/turma/list",
     "component": "/home/lucas/projects/web-educonnect/pages/turma/list.vue",
     "chunkName": "pages/turma/list",
     "_name": "_29ad2e12"
+  },
+  {
+    "name": "matricula-turma",
+    "path": "/matricula/:turma?",
+    "component": "/home/lucas/projects/web-educonnect/pages/matricula/_turma.vue",
+    "chunkName": "pages/matricula/_turma",
+    "_name": "_b31817be"
   },
   {
     "name": "turma-disciplina",

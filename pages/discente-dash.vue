@@ -3,43 +3,54 @@
     <v-row no-gutters>
       <v-col>
         <h1 class="mx-auto">Discente</h1>
-        <v-card
-    class="mx-auto"
-    max-width="344"
-    outlined
-  >
-    <v-list-item three-line>
-      <v-list-item-content>
-        <v-list-item-title class="text-h5 mb-1">
-          Nome do Discente
-        </v-list-item-title>
-        <v-list-item-subtitle>Email do discente</v-list-item-subtitle>
-      </v-list-item-content>
+        <br>
+        <v-card max-width="344" outlined>
+          <v-list-item three-line>
+            <v-list-item-content>
+              <v-list-item-title class="text-h5 mb-1">
+              {{ discente.nome }}
+              </v-list-item-title>
+              <v-list-item-subtitle>{{ discente.email }}</v-list-item-subtitle>
+            </v-list-item-content>
 
-      <v-list-item-avatar
-        tile
-        size="80"
-        color="grey"
-      ></v-list-item-avatar>
-    </v-list-item>
+            <v-list-item-avatar tile size="80" color="grey"></v-list-item-avatar>
+          </v-list-item>
 
-    <v-card-actions>
-      <v-btn
-        rounded
-        text
-      >
-        Minhas Matriculas
-      </v-btn>
-    </v-card-actions>
-  </v-card>
+          <v-card-actions>
+            <v-btn>
+              <NuxtLink style="text-decoration: none; color: white;" :to="`/matricula/list`" rounded>
+                Minhas Matriculas
+              </NuxtLink>
+            </v-btn>
+          </v-card-actions>
+        </v-card>
       </v-col>
       <v-col>
         <h1>Disciplinas Ofertadas</h1>
+        <br>
         <v-card>
-          <v-row no-gutters>1
+          <v-simple-table>
+            <thead>
+              <tr>
+                <th class="text-left">
+                  Disciplina
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="d in ListDisciplinas" :key="d.id">
+                <td>
+                  {{ d.disciplina.disciplina }}
+                </td>
+                <td>
+                  <NuxtLink :to="`/matricula/${d.id}`">
+                    <v-icon>mdi-square-edit-outline</v-icon>
+                  </NuxtLink>
 
-          </v-row>
-          
+                </td>
+              </tr>
+            </tbody>
+          </v-simple-table>
         </v-card>
       </v-col>
     </v-row>
@@ -47,34 +58,34 @@
 </template>
 
 <script setup>
-  import { reactive, ref } from 'vue';
-  import { onMounted } from 'vue';
-  import TurmaService from '~/service/TurmaService';
+import { reactive, ref } from 'vue';
+import { onMounted } from 'vue';
+import TurmaService from '@/service/TurmaService';
+import DiscenteService from '@/service/DiscenteService';
 
-  const ListDisciplinas = ref([])
+const ListDisciplinas = ref([])
+const discente = ref([])
 
-  function loadDisciplinasOfertadas() {
-    TurmaService.list().then (
-      response => {
-        console.log(response.data);
-        ListDisciplinas.value = response.data;
-      }
-    )
+function loadDisciplinasOfertadas() {
+  TurmaService.list().then(
+    response => {
+      ListDisciplinas.value = response.data;
+    }
+  )
+}
+
+function load() {
+  DiscenteService.load(2).then(response => {
+    discente.value = response.data;
+  })
+}
+
+
+onMounted(
+  () => {
+    load();
+    loadDisciplinasOfertadas();
+
   }
-
-  const data = new reactive(
-    {
-      show: false
-    }
-  )
-
-  const texto = new reactive(
-    {
-      valor: "<i>Valor</i>"
-    }
-  );
-
-  onMounted(
-    () => {loadDisciplinasOfertadas();} 
-  )
+)
 </script>
