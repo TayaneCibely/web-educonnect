@@ -44,7 +44,7 @@
                 </td>
                 <td>
                   <NuxtLink :to="`/matricula/${d.id}`">
-                    <v-icon>mdi-square-edit-outline</v-icon>
+                    <v-icon>mdi-plus-thick</v-icon>
                   </NuxtLink>
 
                 </td>

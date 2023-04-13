@@ -45,7 +45,7 @@
                 </td>
                 <td>
                   <NuxtLink :to="`/turma/${d.id}`">
-                    <v-icon>mdi-square-edit-outline</v-icon>
+                    <v-icon>mdi-human-male-board</v-icon>
                   </NuxtLink>
 
                 </td>

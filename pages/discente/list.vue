@@ -16,7 +16,7 @@
           <td>
             <v-btn icon>
                 <NuxtLink :to="`/discente/edit/${d.id}`">
-                      <v-icon >mdi-square-edit-outline</v-icon>
+                      <v-icon >mdi-account-edit</v-icon>
                 </NuxtLink>
               </v-btn>
               <v-btn icon @click="deletar(d.id)">

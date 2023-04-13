@@ -78,17 +78,17 @@ export default {
           to: '/'
         },  
         {
-          icon: 'mdi-account',
-          title: 'Docente',
+          icon: 'mdi-view-dashboard',
+          title: 'Docente Dashboard',
           to: '/docente-dash'
         },
         {
-          icon: 'mdi-account',
-          title: 'Discente',
+          icon: 'mdi-view-dashboard',
+          title: 'Discente Dashboard',
           to: '/discente-dash'
         }, 
         {
-          icon: 'mdi-account',
+          icon: 'mdi-book',
           title: 'Disciplina',
           to: '/disciplina'
         }, 
