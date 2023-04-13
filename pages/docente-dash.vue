@@ -17,7 +17,6 @@
           </v-list-item>
 
           <v-card-actions>
-
             <v-btn>
               <NuxtLink style="text-decoration: none; color: white;" :to="`/turma/list`" rounded>
                 Minhas Disciplinas

@@ -15,6 +15,7 @@
 
             <span>List</span>
             <v-icon>mdi-view-list</v-icon>
+
           </v-btn>
         </NuxtLink>
       </v-bottom-navigation>

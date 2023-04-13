@@ -6,6 +6,7 @@
           <v-btn>
 
             <span>Create</span>
+
             <v-icon>mdi-plus-circle-outline</v-icon>
 
           </v-btn>
@@ -14,7 +15,9 @@
           <v-btn>
 
             <span>List</span>
+
             <v-icon>mdi-view-list</v-icon>
+
           </v-btn>
         </NuxtLink>
       </v-bottom-navigation>
