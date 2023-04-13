@@ -16,7 +16,9 @@
           <td>
             <v-btn icon>
                 <NuxtLink :to="`/disciplina/edit/${d.id}`">
-                      <v-icon >mdi-square-edit-outline</v-icon>
+                      <v-icon >mdi-book-edit</v-icon>
+
+
                 </NuxtLink>
               </v-btn>
               <v-btn icon @click="deletar(d.id)">

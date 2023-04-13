@@ -11,7 +11,8 @@ class MatriculaService {
   async delete(idDiscente, idMat) {
     return http.delete(`discente/${idDiscente}/matricula/${idMat}`);
   }
-  async listMatriculasDiscente() {
+
+  async listMatriculasDiscente(idDiscente) {
     return http.get(`discente/${idDiscente}/matriculas`);
   }
   //falta implementar no backend
