@@ -17,7 +17,9 @@ class DiscenteService {
   async load(id) {
     return http.get(`discente/${id}`);
   }
-
+  async listDiscentesByTurma(idTurma){
+    return http.get(`/discentes/turma/${idTurma}`);
+  }
 }
 
 export default new DiscenteService();

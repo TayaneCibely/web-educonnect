@@ -33,6 +33,9 @@
             <v-btn icon @click="deletar(t.id)">
                   <v-icon>mdi-trash-can-outline</v-icon>
               </v-btn>
+              <NuxtLink :to="`/matriculados/${t.id}`">
+                    <v-icon>mdi-plus-thick</v-icon>
+                </NuxtLink>
           </td>
       </tr>
     </tbody>
