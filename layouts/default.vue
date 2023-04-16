@@ -76,7 +76,22 @@ export default {
           icon: 'mdi-apps',
           title: 'Welcome',
           to: '/'
-        },  
+        }, 
+        {
+          icon: 'mdi-university',
+          title: 'Universidade Dashboard',
+          to: '/universidade'
+        },
+        {
+          icon: 'mdi-home-city',
+          title: 'Campus Dashboard',
+          to: '/campus'
+        },
+        {
+          icon: 'mdi-graduation-caps',
+          title: 'Curso',
+          to: '/curso'
+        }, 
         {
           icon: 'mdi-view-dashboard',
           title: 'Docente Dashboard',
