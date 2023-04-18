@@ -14,7 +14,9 @@ class UniversidadeService {
   async load(id) {
     return http.get(`universidade/${id}`);
   }
-
+  async list() {
+    return http.get("universidades");
+  }
 }
 
 export default new UniversidadeService();
