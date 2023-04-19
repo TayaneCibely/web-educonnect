@@ -30,17 +30,18 @@
   <script setup>
     import { ref } from 'vue';
     import { onMounted } from 'vue';
-    import CampusService from '@/service/UniversidadeService';
+    import UniversidadeService from '@/service/UniversidadeService';
   
-    const listaCampus = ref([])
+    const listaUniversidade = ref([])
   
     function loadAll() {
-        UniversidadeService.list().then (
-            response => {
-              listaCampus.value = response.data;
-            }
-        );
-    }
+    UniversidadeService.list().then (
+        response => {
+          listaUniversidade.value = response.data;
+        }
+    );
+}
+
     
     function deletar(id){
         UniversidadeService.delete(id).then (
