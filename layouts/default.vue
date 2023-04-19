@@ -78,7 +78,7 @@ export default {
           to: '/'
         }, 
         {
-          icon: 'mdi-university',
+          icon: 'mdi-school',
           title: 'Universidade Dashboard',
           to: '/universidade'
         },
@@ -88,8 +88,8 @@ export default {
           to: '/campus'
         },
         {
-          icon: 'mdi-graduation-caps',
-          title: 'Curso',
+          icon: 'mdi-book',
+          title: 'Curso Dashboard',
           to: '/curso'
         }, 
         {
